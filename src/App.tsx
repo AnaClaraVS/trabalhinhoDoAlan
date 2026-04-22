@@ -1,33 +1,35 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { StoreProvider } from './context/StoreContext';
+import Header from './components/Header';
+import { useStore } from './hooks/useStore';
+
+function AppContent() {
+  const { cart } = useStore();
+
+  return (
+    <>
+      <Header cartItemCount={cart.length} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  // Função para adicionar ao carrinho (será passada via props)
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-    alert("Produto adicionado!");
-  };
-
   return (
     <StoreProvider>
       <BrowserRouter>
-        {/* O Header/Navbar fixo pode vir aqui */}
-        <Routes>
-          <Route path="/" element={<Home onAdd={addToCart} />} />
-          <Route path="/product/:id" element={<ProductDetail onAdd={addToCart} />} />
-          <Route path="/cart" element={<Cart items={cart} />} />
-          <Route path="/checkout" element={<Checkout items={cart} />} />
-        </Routes>
+        <AppContent />
       </BrowserRouter>
     </StoreProvider>
-
   );
 }
 

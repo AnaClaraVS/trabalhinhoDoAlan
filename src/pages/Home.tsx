@@ -1,8 +1,8 @@
-import { useAppNavigation } from "../hooks/useNavigation";
+import useNavigation from "../hooks/useNavigation";
 import { useStore } from "../hooks/useStore";
 
 const Home =({...props})=>{
-    const {goToCart, goToCheckout, goToProduct} = useAppNavigation()
+    const {goToCart, goToCheckout, goToProduct} = useNavigation()
     const { products, loading, addToCart } = useStore();
     if(loading)return<div>Loading</div>
     return(
