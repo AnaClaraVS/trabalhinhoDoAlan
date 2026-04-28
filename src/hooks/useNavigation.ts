@@ -6,8 +6,8 @@ export default function useNavigation() {
   return {
     goToHome: () => navigate('/'),
     goToCart: () => navigate('/cart'),
-    goToProducts: () => navigate('/products'),
-    goToLogin: () => navigate('/login'),
+  
+
     goToProduct: (id: string) => navigate(`/product/${id}`),
     goToCheckout: () => navigate('/checkout'),
     goBack: () => navigate(-1),
