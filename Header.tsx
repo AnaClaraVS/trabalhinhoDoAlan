@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useNavigation from '../hooks/useNavigation';
+import useNavigation from '../trabalhinhoDoAlan/src/hooks/useNavigation';
 
 interface HeaderProps {
   cartItemCount: number;
