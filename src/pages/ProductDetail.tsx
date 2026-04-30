@@ -2,10 +2,11 @@ const ProductDetail = ({ ...props }) => {
     return (<div {...props}>
 
 
-        <section className='flex pt-20 pb-25'>     {/*TUDO (menos avaliação)*/}
-            <section className='flex flex-col '>         {/* Esquerda */}
+        <section className='flex flex-col pt-20 pb-25 md:flex-row sm:max-w-full sm:pb-5 items-center md:items-start'>     {/*TUDO (menos avaliação)*/}
+            <section className='flex flex-col'>         {/* Esquerda */}
                 <div className="imgPrincipal">
-                    <img className='h-130 pr-25 pl-25' src='https://img.lojasrenner.com.br/item/927901963/original/12.jpg'></img></div>
+                    <img className='h-auto
+                    md:h-130 md:pr-25 md:pl-25' src='https://img.lojasrenner.com.br/item/927901963/original/12.jpg'></img></div>
                 <section className='flex flex-col items-start'>
                     <h2> Características</h2>
                     <h3 className='font-[600]'> Descrição:</h3>
@@ -60,8 +61,8 @@ const ProductDetail = ({ ...props }) => {
             </section>
         </section>
             <h2> Avaliações</h2>
-        <div className="Avaliações flex items-center justify-start gap-5 pb-10">
-            <div className="avaliacao bg-[#fcf1e3] rounded-lg p-5 border-2 border-[#d2c4b4] w-80 flex">
+        <div className="Avaliações flex items-center justify-start gap-5 pb-10 flex-col md:flex-row flex">
+            <div className="avaliacao bg-[#fcf1e3] rounded-lg p-5 border-2 border-[#d2c4b4] w-80 flex m-0">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmRLRMXynnc7D6-xfdpeaoEUeon2FaU0XtPg&s"
                     className="h-15 rounded-full"></img>
                     <p className='text-blue-500  text-xl'>★★★★★</p>
@@ -73,7 +74,7 @@ const ProductDetail = ({ ...props }) => {
                     <p className='text-blue-500  text-xl'>★★★★★</p>
                     <p> Chegou rápido e o produto é ótimo! </p>
             </div>
-            <div className="avaliacao bg-[#fcf1e3] rounded-lg p-5 border-2 border-[#d2c4b4] w-80 flex">
+            <div className="avaliacao bg-[#fcf1e3] rounded-lg p-5 border-2 border-[#d2c4b4] w-80 flex ">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmRLRMXynnc7D6-xfdpeaoEUeon2FaU0XtPg&s"
                     className="h-15 rounded-full"></img>
                     <p className='text-blue-500  text-xl'>★★★★★</p>
