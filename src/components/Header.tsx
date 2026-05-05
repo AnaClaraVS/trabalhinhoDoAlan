@@ -26,7 +26,7 @@ export default function Header({ cartItemCount }: HeaderProps) {
             alt="Logo da loja" 
             className="h-10 w-auto"
           />
-          <span className="text-xl font-bold">Modefy</span>
+          <span className="text-xl font-bold">Essencial Wear</span>
         </div>
 
         {/* Botão do Menu */}
