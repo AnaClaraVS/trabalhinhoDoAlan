@@ -5,11 +5,17 @@ const pagamentos = {
     pix: "PIX"
 }
 
+const documentos = {
+    cpf: "CPF",
+    cnpj: "CNPJ"
+}
+
 const Checkout =({...props})=>{
+    const[documento, setDocumento] = useState(documentos.cpf)
     const[formadepagamento, setFormadePagamento] = useState(pagamentos.cartaoCredito)
     return <><div {...props}>Checkout
-    <h2>Endereço:</h2>
-        <form>
+    <h2 className="text-3xl">Endereço:</h2>
+        <form className="p-[12px] text-lg"> 
             <div className="m-3 block">
                 <label htmlFor="cep">CEP:</label><br></br>
                 <input type="number" id="cep" name="Nome" placeholder=" CEP" min={0} required></input>
@@ -31,8 +37,8 @@ const Checkout =({...props})=>{
             </div>
         </form>
     <div className="flex flex-col text-center m-3">    
-                <h2>Dados de Contato</h2>
-        <form>
+                <h2 className="text-3xl">Dados de Contato</h2>
+        <form className="p-[12px] text-lg">
             <div>
                 <label htmlFor="nome">Nome:</label><br></br>
                 <input type="text" id="nome" name="nome" placeholder=" Nome" required></input>
@@ -46,25 +52,25 @@ const Checkout =({...props})=>{
     </div>
 
     <div>
-        <h2>Formas de Pagamento</h2>
-        <div className="flex flex-col text-center m-3">
+        <h2 className="text-3xl">Formas de Pagamento</h2>
+        <div className="flex flex-col text-center m-3 transform: scale-113 p-[12px] text-lg">
             <div>
                 <input type="radio" id="cartaoCredito" name="pagamento" value="cartaoCredito" required onChange={() => setFormadePagamento(pagamentos.cartaoCredito)}></input>
                 <label htmlFor="cartaoCredito"> Cartão de Crédito</label><br></br>
             </div>
             {formadepagamento===pagamentos.cartaoCredito && (
-                <div id="pagamentocredito">
-                    <label htmlFor="cartaoCredito"> Numero Cartao </label>
-                    <input type="number" id="numeroCartao" name="numeroCartao" placeholder=" Numero Cartão" min={0} required></input>
+                <div id="pagamentocredito" className="p-3">
+                    <label htmlFor="cartaoCredito"> Numero Cartao </label><br></br>
+                    <input type="number" id="numeroCartao" name="numeroCartao" placeholder=" Numero Cartão" min={0} required></input><br></br>
 
-                    <label htmlFor="nomeCartao"> Nome no Cartão </label>
-                    <input type="text" id="nomeCartao" name="nomeCartao" placeholder=" Nome no Cartão" required></input>
+                    <label htmlFor="nomeCartao"> Nome no Cartão </label><br></br>
+                    <input type="text" id="nomeCartao" name="nomeCartao" placeholder=" Nome no Cartão" required></input><br></br>
 
-                    <label htmlFor="validadeCartao"> Validade </label>
-                    <input type="month" id="validadeCartao" name="validadeCartao" required></input>     
+                    <label htmlFor="validadeCartao"> Validade </label><br></br>
+                    <input type="month" id="validadeCartao" name="validadeCartao" required></input><br></br>     
 
-                    <label htmlFor="cvvCartao"> CVV </label>
-                    <input type="number" id="cvvCartao" name="cvvCartao" placeholder=" CVV" min={0} required></input>    
+                    <label htmlFor="cvvCartao"> CVV </label><br></br>
+                    <input type="number" id="cvvCartao" name="cvvCartao" placeholder=" CVV" min={0} required></input><br></br>   
                 </div>
                 )}
             <div>
@@ -81,20 +87,37 @@ const Checkout =({...props})=>{
     </div>
 
     <div>
-        <h2>Documento</h2>
-        <div className="flex flex-col text-center m-3">
+        <h2 className="text-5xl">Documento</h2>
+        <div className="flex flex-col text-center m-3 transform: scale-113 p-[12px] text-lg">
             <div>
-                <input type="radio" id="cpf" name="documento" value="cpf" required></input>
+                <input type="radio" id="cpf" name="documento" value="cpf" required onChange={() => setDocumento(documentos.cpf)}></input>
                 <label htmlFor="cpf"> CPF</label><br></br>
             </div>
+            {documento === documentos.cpf && (
+                <div>
+                    <label htmlFor="numeroCpf"> Número do CPF </label>
+                    <input type="number" id="numeroCpf" name="numeroCpf" placeholder=" Número do CPF" min={0} required></input>
+                </div>
+            )}
             <div>
-                <input type="radio" id="cnpj" name="documento" value="cnpj" required></input>
+                <input type="radio" id="cnpj" name="documento" value="cnpj" required onChange={() => setDocumento(documentos.cnpj)}></input>
                 <label htmlFor="cnpj"> CNPJ </label><br></br>
-            </div>   
+            </div>
+            {documento === documentos.cnpj && (
+                <div>
+                    <label htmlFor="numeroCnpj"> Número do CNPJ </label>
+                    <input type="number" id="numeroCnpj" name="numeroCnpj" placeholder=" Número do CNPJ" min={0} required></input>
+                </div>
+            )}
         </div>
     </div>
 
-    <button>Finalizar Compra</button>   
+    <div>
+        <h2>Produto</h2> 
+    </div>
+    <div>
+        <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Finalizar Compra</button>
+        </div>   
     </div></>
 }
 export default Checkout
