@@ -22,11 +22,11 @@ export default function Header({ cartItemCount }: HeaderProps) {
           className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
         >
           <img 
-            src="/logo.png" 
+            src="https://i.postimg.cc/vTqf7KyF/logo-EW.png" 
             alt="Logo da loja" 
-            className="h-10 w-auto"
+            className="h-13 w-auto"
           />
-          <span className="text-xl font-bold">Essencial Wear</span>
+          <img className="h-5" src='https://i.postimg.cc/2j4tdFgL/logo-EW-texto.png'/>
         </div>
 
         {/* Botão do Menu */}

@@ -1,3 +1,5 @@
+
+
 const ProductDetail = ({ ...props }) => {
     return (<div {...props}>
 
@@ -10,7 +12,7 @@ const ProductDetail = ({ ...props }) => {
                 <section className='flex flex-col items-start pb-25'>
                     <p className='pt-20 pl-5 text-3xl font-[400]'> Característica do Produto</p>
                     <p className='font-[600] pl-3 text-xl font-[300]'> Descrição:</p>
-                    <p className='pl-3'> //descrição do item//</p>
+                    <p className='pl-3'> //descrição </p>
                 </section>
             </section>
 
