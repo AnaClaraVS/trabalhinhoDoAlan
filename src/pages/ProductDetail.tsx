@@ -50,8 +50,6 @@ const ProductDetail = ({ ...props }) => {
                     <div className='flex flex-col items-start gap-2'>
                         <p> Pix:</p>
                         <img className="w-12 h-12" src="https://logospng.org/download/pix/logo-pix-icone-1024.png"></img>
-                        <p> Boleto Bancário:</p>
-                        <img className="w-12 h-8" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8eMvTahW6nLHEMUhGSaU17jnNC-1SCfLKRA&s"></img>
                         <p> Cartões de Crédito:</p>
                         <img className="w-15 h-6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Elo_card_association_logo_-_black_text.svg/3840px-Elo_card_association_logo_-_black_text.svg.png"></img>
                         <img className="w-15 h-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg/3840px-Visa_Inc._logo_%282021%E2%80%93present%29.svg.png"></img>
