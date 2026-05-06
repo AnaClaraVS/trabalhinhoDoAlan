@@ -6,6 +6,7 @@ import Checkout from './pages/Checkout';
 import { StoreProvider } from './context/StoreContext';
 import Header from './components/Header';
 import { useStore } from './hooks/useStore';
+import Footer from './components/Footer';
 
 function AppContent() {
   const { cart } = useStore();
@@ -19,6 +20,7 @@ function AppContent() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
