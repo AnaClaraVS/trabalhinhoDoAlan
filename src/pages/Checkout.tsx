@@ -14,6 +14,7 @@ const Checkout =({...props})=>{
     const[documento, setDocumento] = useState(documentos.cpf)
     const[formadepagamento, setFormadePagamento] = useState(pagamentos.cartaoCredito)
     return <><div {...props}>Checkout
+<div className="border border-gray-700 m-10 p-3">
     <h2 className="text-3xl">Endereço:</h2>
         <form className="p-[12px] text-lg"> 
             <div className="m-3 block">
@@ -36,7 +37,8 @@ const Checkout =({...props})=>{
                 <input type="text" id="complemento" name="complemento" placeholder=" Complemento" required></input>
             </div>
         </form>
-    <div className="flex flex-col text-center m-3">    
+</div>        
+    <div className="flex flex-col text-center border border-gray-700 m-10 p-3 gap-3">    
                 <h2 className="text-3xl">Dados de Contato</h2>
         <form className="p-[12px] text-lg">
             <div>
@@ -51,7 +53,7 @@ const Checkout =({...props})=>{
         </form>
     </div>
 
-    <div>
+    <div className="border border-gray-700 m-10 p-3">
         <h2 className="text-3xl">Formas de Pagamento</h2>
         <div className="flex flex-col text-center m-3 transform: scale-113 p-[12px] text-lg">
             <div>
@@ -59,7 +61,7 @@ const Checkout =({...props})=>{
                 <label htmlFor="cartaoCredito"> Cartão de Crédito</label><br></br>
             </div>
             {formadepagamento===pagamentos.cartaoCredito && (
-                <div id="pagamentocredito" className="p-3">
+                <div className="p-3 text-lg">
                     <label htmlFor="cartaoCredito"> Numero Cartao </label><br></br>
                     <input type="number" id="numeroCartao" name="numeroCartao" placeholder=" Numero Cartão" min={0} required></input><br></br>
 
@@ -78,7 +80,7 @@ const Checkout =({...props})=>{
                 <label htmlFor="pix"> PIX </label><br></br>
             </div>
             {formadepagamento===pagamentos.pix && (
-                <div id="pagamentopix">
+                <div className="p-3 text-lg">
                     <label htmlFor="chavePix"> Chave PIX </label>
                     <input type="text" id="chavePix" name="chavePix" placeholder=" Chave PIX" required></input>
                 </div>
@@ -86,7 +88,7 @@ const Checkout =({...props})=>{
         </div>  
     </div>
 
-    <div>
+    <div className="border border-gray-700 m-10 p-3">
         <h2 className="text-5xl">Documento</h2>
         <div className="flex flex-col text-center m-3 transform: scale-113 p-[12px] text-lg">
             <div>
@@ -94,7 +96,7 @@ const Checkout =({...props})=>{
                 <label htmlFor="cpf"> CPF</label><br></br>
             </div>
             {documento === documentos.cpf && (
-                <div>
+                <div className="p-3 text-lg">
                     <label htmlFor="numeroCpf"> Número do CPF </label>
                     <input type="number" id="numeroCpf" name="numeroCpf" placeholder=" Número do CPF" min={0} required></input>
                 </div>
@@ -104,7 +106,7 @@ const Checkout =({...props})=>{
                 <label htmlFor="cnpj"> CNPJ </label><br></br>
             </div>
             {documento === documentos.cnpj && (
-                <div>
+                <div className="p-3 text-lg">
                     <label htmlFor="numeroCnpj"> Número do CNPJ </label>
                     <input type="number" id="numeroCnpj" name="numeroCnpj" placeholder=" Número do CNPJ" min={0} required></input>
                 </div>
@@ -116,7 +118,7 @@ const Checkout =({...props})=>{
         <h2>Produto</h2> 
     </div>
     <div>
-        <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Finalizar Compra</button>
+        <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded cursor-pointer">Finalizar Compra</button>
         </div>   
     </div></>
 }
