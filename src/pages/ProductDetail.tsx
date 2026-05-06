@@ -34,11 +34,11 @@ const ProductDetail = ({ ...props }) => {
                         </div>
                         <div className='opcTamanho pt-5 pb-12 md:pb-20 pl-3'>
                         <p className='font-[600]'>Tamanho:</p>
-                            <button className="border-[#2c5596] bg-#9db8e3 hover:bg-[##a5c9e8] focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> PP </button>
-                            <button className="border-[#2c5596] bg-#9db8e3 hover:bg-[##a5c9e8] focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1">  P </button>
-                            <button className="border-[#2c5596] bg-#9db8e3 hover:bg-[##a5c9e8] focus:bg-[#81a6c6] focus:border-[##6789ab]  focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> M </button>
-                            <button className="border-[#2c5596] bg-#9db8e3 hover:bg-[##a5c9e8] focus:bg-[#81a6c6]  focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3  focus:text-white w-9 h-9 m-1"> G </button>
-                            <button className="border-[#2c5596] bg-#9db8e3 hover:bg-[##a5c9e8] focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> GG </button>
+                            <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> PP </button>
+                            <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1">  P </button>
+                            <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab]  focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> M </button>
+                            <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6]  focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3  focus:text-white w-9 h-9 m-1"> G </button>
+                            <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> GG </button>
                         </div>
                         <p className="font-[600] p-4">Estoque disponível</p>
                         <div className='flex flex-col items-center'>
