@@ -33,14 +33,14 @@ const ProductDetail = ({ ...props }) => {
                             <img className='h-15 w-15 md:h-15 border-[#2c5596] border-2 rounded-lg' src='https://img.lojasrenner.com.br/item/927901963/original/12.jpg'></img>
                         </div>
                         <div className='opcTamanho pt-5 pb-12 md:pb-20 pl-3'>
-                        <p className='font-[600]'>Tamanho:</p>
+                            <p className='font-[600]'>Tamanho:</p>
                             <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> PP </button>
                             <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1">  P </button>
                             <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab]  focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> M </button>
                             <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6]  focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3  focus:text-white w-9 h-9 m-1"> G </button>
                             <button className="border-[#2c5596] bg-#9db8e3 cursor-pointer focus:bg-[#81a6c6] focus:border-[##6789ab] focus:text-white-700 rounded-lg duration-300 ease-in border-3 focus:text-white w-9 h-9 m-1"> GG </button>
                         </div>
-                        <p className="font-[600] p-4">Estoque disponível</p>
+                        <p className="font-[600] p-4">Estoque disponível 2500+</p>
                         <div className='flex flex-col items-center'>
                             <button className='bg-[#aacddc] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#9bbfcf] text-white duration-300 ease-in w-60 h-12'> Comprar Agora </button><br></br>
                             <button className='bg-[#7b8ab3] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#6f7ea8] text-white duration-300 ease-in w-60 h-12'> Adicionar ao Carrinho</button>
