@@ -11,7 +11,6 @@ const Home =({...props})=>{
 
             <button className="cursor-pointer" onClick={goToCart}>Carrinho</button>
             <button className="cursor-pointer" onClick={goToCheckout}>Checkout</button>
-            <button className='cursor-pointer' onClick= {(id)=>goToProduct('1')}> Produtos</button>
           <div className="flex flex-wrap gap-4 justify-center">
               {products.length>0 && products.map((item)=>(
 
