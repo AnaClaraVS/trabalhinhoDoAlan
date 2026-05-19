@@ -3,13 +3,14 @@ import useNavigation from "../hooks/useNavigation";
 import { useStore } from "../hooks/useStore";
 
 const Home =({...props})=>{
-    const { goToProduct} = useNavigation()
+    const {goToCart, goToCheckout, goToProduct} = useNavigation()
     const { products, loading,  } = useStore();
     if(loading)return<div>Loading</div>
     return(
         <div {...props} className="flex flex-col">
 
-
+            <button className="cursor-pointer" onClick={goToCart}>Carrinho</button>
+            <button className="cursor-pointer" onClick={goToCheckout}>Checkout</button>
           <div className="flex flex-wrap gap-4">
               {products.length>0 && products.map((item)=>(
 
