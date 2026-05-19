@@ -30,11 +30,11 @@ const ProductDetail = ({ ...props }) => {
             <section className='flex flex-col'>         {/* Esquerda */}
                 <div className="imgPrincipal">
                     <img className='h-auto
-                    md:h-130 md:pr-25 md:pl-25 max-w-170' src={product? product.images[0]:''}></img></div>
+                    md:h-130 md:pr-25 md:pl-25 md:max-w-170 max-w-90 flex content-items' src={product? product.images[0]:''}></img></div>
                 <section className='flex flex-col items-start pb-25'>
                     <p className='pt-20 pl-5 text-3xl font-[400] pb-5'> Característica do Produto</p>
                     <p className='font-[600] pl-3 text-xl font-[300]'> Descrição:</p>
-                    <p className='pl-3 max-w-150 text-left'> {product? product.description:''} </p>
+                    <p className='pl-3 md:max-w-150 text-left max-w-80'> {product? product.description:''} </p>
                 </section>
             </section>
 
@@ -46,7 +46,7 @@ const ProductDetail = ({ ...props }) => {
                             <p className='text-blue-500  text-xl pl-3'>★★★★★</p>
                             <p> 4.9 (1000 avaliações) </p>
                         </div>
-                        <p className=' text-4xl font-[400] pt-5 pb-7 pl-3'> R${product? product.price:''},99</p>
+                        <p className=' text-4xl font-[400] pt-5 pb-7 pl-3'> R${product? product.price:''},00</p>
                         <p className='pt-10 text-green-500 text-2xl font-[700] pl-3'>Frete Grátis</p>
                         <p className='text-green-500 text-lg font-[600] pl-3'> chegará entre .. e ..</p>
                         <p className='font-[400] pb-9 pl-3'> Por ser sua primeira compra </p>
