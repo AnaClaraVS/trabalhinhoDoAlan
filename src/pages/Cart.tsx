@@ -1,4 +1,9 @@
+import useNavigation from "../hooks/useNavigation"
+
 const Cart =({...props}) => {
+
+    const {goToCheckout} = useNavigation()
+
     return (
         <div {...props}>
             <h2>Carrinho</h2>
@@ -45,11 +50,9 @@ const Cart =({...props}) => {
                 </div>
             </div>
 
-            <a href="http://localhost:5174/checkout" data-polar-checkout> 
-               <button className="m-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+               <button className="m-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={goToCheckout}>
                 Comprar Agora
                 </button>
-            </a>
 
         </div>
     )

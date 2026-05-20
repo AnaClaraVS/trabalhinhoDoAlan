@@ -2,9 +2,11 @@ import { useParams } from "react-router-dom"
 import { useStore } from "../hooks/useStore"
 import { useEffect, useState } from "react"
 import { type Iproduct } from "../context/StoreContext"
+import useNavigation from "../hooks/useNavigation"
 
 
 const ProductDetail = ({ ...props }) => {
+    const {goToCart} = useNavigation()
 
     const {id} = useParams()
     const { getProductById } = useStore()
@@ -65,7 +67,7 @@ const ProductDetail = ({ ...props }) => {
                         <p className="font-[600] p-4">Estoque disponível <span className='text-green-500'> 2500+</span></p>
                         <div className='flex flex-col items-center'>
                             <button className='bg-[#aacddc] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#9bbfcf] text-white duration-300 ease-in w-60 h-12'> Comprar Agora </button><br></br>
-                            <button className='bg-[#7b8ab3] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#6f7ea8] text-white duration-300 ease-in w-60 h-12'> Adicionar ao Carrinho</button>
+                            <button className='bg-[#7b8ab3] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#6f7ea8] text-white duration-300 ease-in w-60 h-12' onClick={goToCart}> Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </section>
