@@ -1,6 +1,6 @@
 export async function getProducts() {
   try {
-    const response = await fetch("https://api.escuelajs.co/api/v1/products");
+    const response = await fetch("https://api.escuelajs.co/api/v1/products/?categoryId=1");
     const data = await response.json();
     return data;
   } catch (error) {
