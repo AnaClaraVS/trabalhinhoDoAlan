@@ -8,7 +8,7 @@ interface HeaderProps {
 export default function Header({ cartItemCount }: HeaderProps) {
  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { goToHome, goToCart, goToCheckout } = useNavigation();
+  const { goToHome, goToCart} = useNavigation();
 
   return (
     <header className="bg-[#81A6C6] text-white p-4 shadow-md">
@@ -67,15 +67,6 @@ export default function Header({ cartItemCount }: HeaderProps) {
                 )}
               </button>
               
-              <button 
-                onClick={() => {
-                  goToCheckout();
-                  setIsMenuOpen(false);
-                }}
-                className="w-full text-left px-4 py-2 text-gray-800 hover:bg-[#D2C4B4]"
-              >
-                 Checkout
-              </button>
             </div>
           )}
         </div>

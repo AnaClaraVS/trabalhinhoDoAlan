@@ -10,7 +10,8 @@ interface Store {
   getProductById: (id: number) => Promise<Iproduct | null>;
 }
 
-export const StoreContext = createContext<Store | null>(null);
+const StoreContext = createContext<Store | null>(null);
+export { StoreContext };
 
 interface Icategory {
   id: number,
