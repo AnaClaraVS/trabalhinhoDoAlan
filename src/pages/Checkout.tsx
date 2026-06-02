@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {useStore} from "../hooks/useStore"
 
 const pagamentos = {
     cartaoCredito: "Cartão de Crédito",
@@ -11,8 +12,16 @@ const documentos = {
 }
 
 const Checkout =({...props})=>{
+    const {cart} = useStore()
     const[documento, setDocumento] = useState()
     const[formadepagamento, setFormadePagamento] = useState()
+    function calcularTotal(){
+        let total = 0
+        cart.forEach((item) => {
+            total += item.price 
+        })
+        return total
+    }
     return <><div {...props}>Checkout
 <div className="md:flex flex-row lg:flex-row">
     <div className="border rounded-lg border-gray-700 m-10 p-3 md:w-1/2 lg:w-1/2">
@@ -114,9 +123,26 @@ const Checkout =({...props})=>{
             )}
         </div>
     </div>
-
+    {cart.map((item, indice) => (
+        <div className="border rounded-lg border-gray-700 m-10 p-3 text-center" key={indice}>
+            <h2>Produto</h2>
+            <div className="flex">
+                <img className="w-full h-auto md:w-65" src={item.images[0]} alt={item.title}></img>
+                    <div className="flex w-full">
+                        <div className="flex flex-col items-start p-4 w-full">
+                            <h2 className="mb-2">Nome: {item.title}</h2>
+                        </div>
+                        <div className="flex py-4 items-end itens-left">
+                            <p className="text-4xl text-black font-semibold">Preço: R$ {item.price.toFixed(2)}</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    ))
+    }
+    
     <div>
-        <h2>Produto</h2> 
+        <p className="text-2xl text-black font-semibold">Total: R$ {calcularTotal().toFixed(2)}</p>
     </div>
     <div>
         <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded cursor-pointer">Finalizar Compra</button>
