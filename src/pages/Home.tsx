@@ -3,13 +3,14 @@ import useNavigation from "../hooks/useNavigation";
 import { useStore } from "../hooks/useStore";
 
 const Home =({...props})=>{
-    const {goToCheckout, goToProduct} = useNavigation()
+    const {goToProduct} = useNavigation()
     const { products, loading,  } = useStore();
     if(loading)return<div>Loading</div>
     return(
         <div {...props} className="flex flex-col  items-center gap-4 content-center ">
 
-            <button className="cursor-pointer" onClick={goToCheckout}>Checkout</button>
+            <img className='pt-5' src='https://i.postimg.cc/QMtSTX2Z/2106.png'></img>
+
           <div className="flex flex-wrap gap-4 justify-center">
               {products.length>0 && products.map((item)=>(
 

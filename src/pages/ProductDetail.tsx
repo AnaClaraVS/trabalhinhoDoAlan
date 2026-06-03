@@ -11,6 +11,7 @@ const ProductDetail = ({ ...props }) => {
     const {id} = useParams()
     const { getProductById, addToCart } = useStore()
     const [product,setProduct] = useState<Iproduct>()
+    const [message, setMessage] = useState('')
     const loadProduct= async ()=>{
         if(id){
             const response = await getProductById(parseInt(id)) 
@@ -23,6 +24,15 @@ const ProductDetail = ({ ...props }) => {
         loadProduct()
     },[])
 
+    const handleAddToCart = () => {
+        if(product){
+            addToCart(product)
+            setMessage('Produto adicionado ao carrinho!')
+            setTimeout(()=>{
+                setMessage('')
+            },2000)
+        }
+    }
 
     return (<div {...props}>
         
@@ -66,10 +76,10 @@ const ProductDetail = ({ ...props }) => {
                         </div>
                         <p className="font-[600] p-4">Estoque disponível <span className='text-green-500'> 2500+</span></p>
                         <div className='flex flex-col items-center'>
-                            <button className='bg-[#aacddc] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#9bbfcf] text-white duration-300 ease-in w-60 h-12'> Comprar Agora </button><br></br>
                             <button className='bg-[#7b8ab3] rounded-lg p-2 cursor-pointer font-[700] hover:bg-[#6f7ea8] text-white duration-300 ease-in w-60 h-12' 
-                            onClick={() => {if(product){addToCart(product) }
+                            onClick={() => {handleAddToCart()
                             }}> Adicionar ao Carrinho</button>
+                            <p className='italic'> {message}</p>
                         </div>
                     </div>
                 </section>
