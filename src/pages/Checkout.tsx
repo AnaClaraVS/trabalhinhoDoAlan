@@ -2,6 +2,8 @@ import { useState } from "react"
 import {useStore} from "../hooks/useStore"
 
 
+
+
 const pagamentos = {
     cartaoCredito: "Cartão de Crédito",
     pix: "PIX"
@@ -16,16 +18,25 @@ const Checkout =({...props})=>{
     const {cart} = useStore()
     const[documento, setDocumento] = useState()
     const[formadepagamento, setFormadePagamento] = useState()
+    const [message, setMessage] = useState('')
 
+    function handleFinalizarCompra(){
+        if(cart.length > 0){''
+        setMessage('Compra Finalizada!')    
+        }
    
 
+    }
     function calcularTotal(){
         let total = 0
         cart.forEach((item) => {
             total += item.price 
         })
         return total
-    }
+}
+
+
+
     return <><div {...props}>Checkout
 <div className="md:flex flex-row lg:flex-row">
     <div className="border rounded-lg border-gray-700 m-10 p-3 md:w-1/2 lg:w-1/2">
@@ -149,7 +160,10 @@ const Checkout =({...props})=>{
         <p className="text-2xl text-black font-semibold">Total: R$ {calcularTotal().toFixed(2)}</p>
     </div>
     <div>
-        <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded cursor-pointer">Finalizar Compra</button>
+        <button type="submit" className="m-3 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded cursor-pointer"
+        onClick={handleFinalizarCompra}
+        >Finalizar Compra</button>
+        <p className="text-lg text-gray-700">{message}</p>
         </div>   
     </div></>
 }
