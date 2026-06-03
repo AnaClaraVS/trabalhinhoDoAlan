@@ -1,10 +1,12 @@
-const CartItem = ({ product, quantity }: { product: any; quantity: number }) => {
+import type {Iproduct} from "../context/StoreContext"
+
+const CartItem = ({ product }: { product: Iproduct }) => {
     return (
-        <div className="border m-7.5 p-3.75 flex">
-            <img className="h-87.5" src={product.image} alt={product.name} />
+        <div className="border m-7.5 p-3.75 flex flex-col md:flex-row">
+            <img className="h-87.5" src={product.images?.[0]} alt={product.title} />
             <div className="flex w-full">
                 <div className="flex flex-col items-start p-4 w-full">
-                    <h2 className="mb-2">{product.name}</h2>
+                    <h2 className="mb-2">{product.title}</h2>
                     <div className="flex flex-col justify-end items-start h-full">
                         <h4>Tamanho:</h4>
                         <h4 className="mb-2">Cor: Já definido</h4>
