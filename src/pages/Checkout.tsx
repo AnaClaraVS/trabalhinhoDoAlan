@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {useStore} from "../hooks/useStore"
 
+
 const pagamentos = {
     cartaoCredito: "Cartão de Crédito",
     pix: "PIX"
@@ -15,6 +16,9 @@ const Checkout =({...props})=>{
     const {cart} = useStore()
     const[documento, setDocumento] = useState()
     const[formadepagamento, setFormadePagamento] = useState()
+
+   
+
     function calcularTotal(){
         let total = 0
         cart.forEach((item) => {
@@ -126,14 +130,14 @@ const Checkout =({...props})=>{
     {cart.map((item, indice) => (
         <div className="border rounded-lg border-gray-700 m-10 p-3 text-center" key={indice}>
             <h2>Produto</h2>
-            <div className="flex">
-                <img className="w-full h-auto md:w-65" src={item.images[0]} alt={item.title}></img>
-                    <div className="flex w-full">
-                        <div className="flex flex-col items-start p-4 w-full">
+            <div className="md:flex">
+                <img className="md:w-55" src={item.images[0]} alt={item.title}></img>
+                    <div className="md:flex w-full">
+                        <div className="md:flex flex-col items-start p-4 w-full">
                             <h2 className="mb-2">Nome: {item.title}</h2>
                         </div>
-                        <div className="flex py-4 items-end itens-left">
-                            <p className="text-4xl text-black font-semibold">Preço: R$ {item.price.toFixed(2)}</p>
+                        <div className="md:flex py-4 items-end itens-left">
+                            <p className="text-xl text-black font-semibold">Preço: R$ {item.price.toFixed(2)}</p>
                         </div>
                     </div>
             </div>
